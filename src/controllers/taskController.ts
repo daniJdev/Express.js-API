@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 import prisma from "../prisma/client";
 
 export const getTasks = async (req: Request, res: Response) => {
-  const page = parseInt(req.query.page as string) || 1; // Default to page 1
-  const limit = parseInt(req.query.limit as string) || 10; // Default to 10 tasks per page
+  const page = parseInt(req.query.page as string) || 1;
+  const limit = parseInt(req.query.limit as string) || 10;
   const skip = (page - 1) * limit;
 
   try {
@@ -11,11 +11,11 @@ export const getTasks = async (req: Request, res: Response) => {
       skip,
       take: limit,
       orderBy: {
-        createdAt: "desc", // Sort by most recent tasks first
+        createdAt: "desc",
       },
     });
 
-    const totalTasks = await prisma.task.count(); // Get total task count
+    const totalTasks = await prisma.task.count();
 
     res.json({
       tasks,

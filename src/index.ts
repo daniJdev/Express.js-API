@@ -8,17 +8,16 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Dynamic CORS Configuration
-const allowedOrigins = process.env.FRONTEND_URL?.split(",") || []; // Support multiple origins
+const allowedOrigins = process.env.FRONTEND_URL?.split(",") || [];
 const corsOptions = {
   origin: (
     origin: string | undefined,
     callback: (err: Error | null, allow?: boolean) => void
   ) => {
     if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true); // Allow the request
+      callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS")); // Deny the request
+      callback(new Error("Not allowed by CORS"));
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE"],
