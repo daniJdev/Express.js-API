@@ -49,6 +49,7 @@ This is the backend API for the Todo List App, built with **Express.js** and **P
      ```
      DATABASE_URL=mysql://<USER>:<PASSWORD>@localhost:3306/todo_db
      PORT=5000
+     FRONTEND_URL=http://localhost:3000
      ```
 
 4. Set up the database:
