@@ -34,8 +34,8 @@ This is the backend API for the Todo List App, built with **Express.js** and **P
 
 1. Clone the repository:
    ```bash
-   git clone <backend-repo-url>
-   cd <backend-repo-folder>
+   git clone https://github.com/daniJdev/Express.js-API.git
+   cd Express.js-API
    ```
 
 2. Install dependencies:
@@ -100,9 +100,3 @@ To run the backend in production:
 ├── prisma/            # Prisma schema and migrations
 └── .env               # Environment variables
 ```
-
----
-
-## License
-
-This project is licensed under the MIT License.
